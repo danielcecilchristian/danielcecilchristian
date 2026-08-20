@@ -8,7 +8,7 @@
 <meta property="og:title" content="Cecil Christian — Communication Design Portfolio">
 <meta property="og:description" content="Selected communication design, branding, editorial, motion and visual communication work.">
 <meta property="og:type" content="website">
-<title>Cecil Christian — Portfolio</title>
+<title>Daniel Cecil Christian — Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,7 +51,7 @@
   <div class="two-col">
     <h2>Design is how I turn a thought into a <i>conversation.</i></h2>
     <div class="copy">
-      <p>I am Cecil Christian, a Communication Design graduate with a multidisciplinary approach to visual communication.</p>
+      <p>I am Daniel Cecil Christian, a Communication Design graduate with a multidisciplinary approach to visual communication.</p>
       <p>My work moves between identity, editorial, print, digital media, motion and image-making. I am interested in how research, typography, composition and storytelling can make ideas clearer and more memorable.</p>
       <p>This portfolio presents selected academic, personal and practical design work for graduate-school review.</p>
       <div class="skills"><span>Visual Communication</span><span>Graphic Design</span><span>Brand Identity</span><span>Editorial</span><span>Motion</span><span>Print</span><span>Digital Media</span><span>Photography</span></div>
@@ -92,8 +92,7 @@ function render(filter='all'){
   grid.innerHTML=visible.map((p,i)=>`<article class="card" tabindex="0" data-i="${i}">
     <div class="thumb"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
     <div class="meta"><div><h3>${p.title}</h3><p>${p.category}</p></div><span>↗</span></div>
-  </article>`).join('');
-  document.querySelectorAll('.card').forEach(card=>{
+  </article>`).join('')Cecilment.querySelectorAll('.card').forEach(card=>{
     card.onclick=()=>openViewer(+card.dataset.i);
     card.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openViewer(+card.dataset.i)}};
   });

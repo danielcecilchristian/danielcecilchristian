@@ -13,13 +13,9 @@ const projects=[
 {title:"Digital Printing — Applications",category:"graphic-design",label:"Graphic Design",image:"images/digital-printing-02.jpg",desc:"Printed design applications demonstrating colour, layout and production."},
 {title:"Social Media Graphics",category:"graphic-design",label:"Graphic Design",image:"images/social-media-graphics.jpg",desc:"Social media graphics created to communicate product information and brand messaging in digital spaces."},
 {title:"ATL FM Promotional Graphics",category:"graphic-design",label:"Graphic Design",image:"images/atl-fm-promotional-graphics.jpg",desc:"Promotional graphic design combining programme information, photography and typography for audience engagement."},
-{title:"CBS Motion Graphics",category:"photo-video",label:"Photo / Video",image:"images/cbs-motion-graphics.png",desc:"Motion graphics work exploring visual identity, screen composition and animated broadcast communication."},
-{title:"Broadcast Graphics & Editing",category:"photo-video",label:"Photo / Video",image:"images/broadcast-graphics.jpg",desc:"Broadcast and video-editing workflow showing screen graphics, timeline editing and visual storytelling."}
-];
-const grid=document.getElementById("grid"), lb=document.getElementById("lightbox"), img=document.getElementById("lbimg"), title=document.getElementById("lbtitle"), cat=document.getElementById("lbcat"), desc=document.getElementById("lbdesc");let visible=[...projects],current=0;
-function render(filter="all"){visible=filter==="all"?[...projects]:projects.filter(p=>p.category===filter);grid.innerHTML=visible.map((p,i)=>`<article class="card" data-i="${i}" tabindex="0"><div class="pic"><img src="${p.image}" alt="${p.title}"></div><div class="meta"><div><h3>${p.title}</h3><p>${p.label}</p></div><span>↗</span></div></article>`).join("");document.querySelectorAll(".card").forEach(c=>{c.onclick=()=>open(+c.dataset.i);c.onkeydown=e=>{if(e.key==="Enter")open(+c.dataset.i)}})}
-function open(i){current=i;let p=visible[i];img.src=p.image;img.alt=p.title;title.textContent=p.title;cat.textContent=p.label;desc.textContent=p.desc;lb.classList.add("open");document.body.style.overflow="hidden"}
-function close(){lb.classList.remove("open");document.body.style.overflow=""}function next(){open((current+1)%visible.length)}function prev(){open((current-1+visible.length)%visible.length)}
-document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
-document.querySelector(".close").onclick=close;document.querySelector(".next").onclick=next;document.querySelector(".prev").onclick=prev;lb.onclick=e=>{if(e.target===lb)close()};document.onkeydown=e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowRight")next();if(e.key==="ArrowLeft")prev()};
-const menu=document.querySelector(".menu");menu.onclick=()=>document.querySelector("nav").classList.toggle("open");document.querySelectorAll("nav a").forEach(a=>a.onclick=()=>document.querySelector("nav").classList.remove("open"));document.getElementById("year").textContent=new Date().getFullYear();render();
+
+{title:"Beautiful — Tint & Shade Study",category:"graphic-design",label:"Graphic Design",image:"images/beautiful.jpg",desc:"A colour and typography study exploring tint and shade through the three primary colours red, yellow and blue, applied to the word BEAUTIFUL."},
+
+{title:"Sankofa — “Go Back and Get It”",category:"graphic-design",label:"Graphic Design",image:"images/sankofa.jpg",desc:"A hand-drawn interpretation of the Ghanaian Adinkra symbol Sankofa — “Go Back and Get It” — representing the importance of learning from the past to shape the future."},
+
+{title:"Gye Nyame — “Except God”",category:"graphic-design",label:"Graphic Design",image:"images/gye-ny
